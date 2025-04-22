@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>层次选择器</title>
+</head>
+<body>
+    <div id="div1" class="box">div1(class="box")</div>
+    <div id="div2" class="box">div2(class="box")</div>
+    <div id="div3" >div3</div>
+    <span class="box">span(class="box")</span>
+
+    <br>
+    <ul>
+        <li>AAAAA</li>
+        <li class="box">CCCCC</li>
+        <li title="hello"><span>BBBBB</span></li>
+        <li title="hello"><span>DDDDD</span></li>
+        <span>EEEEE</span>
+    </ul>
+
+    <script type="text/javascript" src="jquery插件/jquery3.7.1.js"> </script>
+    <script type="text/javascript">
+        // 需求:
+        // 1.选中ul下所有的的span
+        //  $("ul span").css("background","yellow");
+        // 2.选中ul下所有的子元素span
+        // $("ul>span").css("background","yellow");
+        // 3.选中class为box的下一个li
+        // $(".box+li").css("background","yellow");
+        // 4.选中ul下的class为box的元素后面的所有兄弟元素
+        $("ul .box ~*").css("background","yellow");
+    </script>
+</body>
+</html>
