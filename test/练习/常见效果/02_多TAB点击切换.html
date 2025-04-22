@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>02_多TAB点击切换</title>
+
+</head>
+<body>
+    <ul id="tab">
+        <li id="tab1 value="1"> 10元套餐</li>
+        <li id="tab2 value="2">30元套餐</li>
+        <li id="tab3 value="3">50元包月</li>
+    </ul>
+
+    <div id="container">
+        <div id="content1">
+            10元套餐详情:<br>
+            每月套餐内拨打100分钟,超出部分2毛/分钟
+        </div>
+        <div id="content2">
+            30元套餐详情:<br>
+            每月套餐内拨打200分钟,超出部分2毛/分钟
+        </div>
+        <div id="content3">
+            50元包月详情:<br>
+            每月套餐内拨打500分钟,超出部分2毛/分钟
+        </div>
+    </div>
+    <script type="text/javascript" src="jquery插件/jquery3.7.1.js"> </script>
+    <script type="text/javascript">
+
+        // var $contents = $('#container>div')
+        // // 给3个li加监听
+        // $('#tab>li').click(function(){
+        // })
+        // // 隐藏所有内容div
+        // $contents.css('display','none')
+        // // 显示对应的内容div
+        // // 得到当前点击当前的li在兄弟中下标
+        // var index = $(this).index()
+        // // 找到对应的内容div，并显示
+        // $contents[index].style.display = "block"
+
+
+
+        var currIndex = 0 //当前显示的内容div的下标
+        $('#tab>li').click(function(){
+        })
+        // 隐藏当前已经显示的内容div
+        $contents[currIndex].style.display = "none"
+        // 显示对应的内容div
+        // 得到当前点击当前的li在兄弟中下标
+        var index = $(this).index()
+        // 找到对应的内容div，并显示
+        $contents[index].style.display = "block"
+        
+        // 更新下标
+        currIndex = index
+    </script>
+</body>
+</html>

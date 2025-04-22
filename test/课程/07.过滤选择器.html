@@ -17,7 +17,7 @@
         <li class="box"> CCCCCC </li>
         <li title="hello"> DDDDDDD </li>
         <li title="two"> BBBBBBB </li>
-        <li style="..."> 我本来是隐藏的 </li>
+        <li style="display:none;">我本来是隐藏的</li>
     </ul>
 
     <script type="text/javascript" src="jquery插件/jquery3.7.1.js"> </script>
@@ -25,15 +25,28 @@
 
         // 需求:
         // 1.选择第一个div
-        
+        // $("div:first").css("background","red");
+
         // 2.选择最后一个class为box的元素
+        // $(".box:last").css("background","red");
+
         // 3.选择所有class属性不为box的div
+        //  $("div:not(.box)").css("background","red");
+
         // 4.选择第二个和第三个Li元素
+        // $("li:gt(0):lt(2)").css("background","red"); //多个过滤选择器不是同时执行,而是依次
+
         // 5.选择内容为BBBBBB的Li
+        // $("li:contains('BBBBBBB')").css("background","red");
+
         // 6.选择隐藏的Li
+        // $("li:hidden").css("background","red");
+
         // 7.选择有title属性的Li元素
+        // $("li[title]").css("background","red");
+
         // 8.选择所有属性title为hello的li元素
-       
+        $("li[title=hello]").css("background","red");
     </script>
 </body>
 </html>

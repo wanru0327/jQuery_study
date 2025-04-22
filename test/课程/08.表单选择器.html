@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>08.表单选择器</title>
+</head>
+<body>
+    <script type="text/javascript" src="jquery插件/jquery3.7.1.js"> </script>
+    <script type="text/javascript">
+    // 1.选择不可用的文本输入框
+    // $(':text:disabled').css('background','red');
+
+    //2.显示选择爱好的个数
+    // $(':checkbox:checked').length;
+
+    //3.显示选择的城市名称
+    $('submit').click(function(){
+        // var city = $("select>option:selected").html()   选择的opting的标签体文本
+        // city=$("select").val()                选择的opting的value属性值
+        alert(city)
+    });
+
+    </script>
+</body>
+</html>
