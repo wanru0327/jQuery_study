@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>03.回到顶部</title>
+
+</head>
+<body>
+    
+    <script type="text/javascript" src="jquery插件/jquery3.7.1.js"> </script>
+    <script type="text/javascript">
+// 瞬间滚到顶部
+//$('html,body').scrollTop(0)
+// 平滑滚到顶部
+// 总距离
+// 总时间
+// 间隔时间
+// 使用循环定时器不断滚动
+//到达顶部,停止定时器
+
+
+
+$('#to_top').click(function(){
+// 瞬间滚到顶部
+//$('html,body').scrollTop(0)
+// 平滑滚到顶部
+// 总距离
+var $page =$('html,body')
+var distance = $('html').scrollTop() + $('body').scrollTepp()
+// 总时间
+var time = 2000
+//间隔时间
+var intervalTime = 50
+var itemDistance = distance/(time/intervalTime)
+alert(distance)
+//使用循环定时器不断滚动
+var intervalid=setinterval(function(){
+distance -= itemDistance
+//到达顶部,停止定时器
+if(distance<=0){
+    distance=0//修正
+clearInterval(intervalid)
+}
+$page.scrollTop(distance)
+},intervalTime)
+})      
+    </script>
+</body>
+</html>

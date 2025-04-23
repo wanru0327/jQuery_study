@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>12.offset和position</title>
+</head>
+<body>
+    <script type="text/javascript" src="jquery插件/jquery3.7.1.js"> </script>
+    <script type="text/javascript">
+//    2.点击btn2
+    // 设置div2相对于页面的左上角的位置
+
+$('#btn1').click(function(){
+    // 打印div1相对于页面左上角的位置
+var offset=$('.div1').offset()
+console.log(offset.left, offset.top)// 10 20
+    // 打印div2相对于页面左上角的位置
+offset=$('.div2').offset()
+console.log(offset.left, offset.top) //1070
+    // 打印div1相对于父元素左上角的位置
+var position = $('.div1').position()
+console.log(position.left,position.top) //10 20
+    // 打印div2相对于父元素左上角的位置
+position = $('.div2').position()
+console.log(position.left, position.top) // 0 50
+})
+$('#btn2').click(function(){
+    $('.div2').offset({
+        left:50,
+        top:100
+    })
+})
+
+    </script>
+</body>
+</html>
