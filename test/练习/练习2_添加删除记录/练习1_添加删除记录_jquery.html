@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>练习1_添加删除记录_jquery</title>
+
+</head>
+<body>
+    <script type="text/javascript" src="jquery3.7.1 copy.js"> </script>
+    <script type="text/javascript">
+
+    // 1.添加
+
+    // $(#addEmpButton').click(function
+    // //1.收集输入的数据
+    // var $empName = $('#empName')
+    // var $email = $('#email')
+    // var $salary=$('#salary')
+    // var empName = $empName.val()
+    // var email = $email.val()
+    // var salary = $salary.val()
+
+    //2.生成对应的<tr>标签结构,并插入#employeeTable的tbody中
+    // $('<tr></tr>')
+    // .append('<td>'+empName+'</td>')//拼串
+    // .append('<td>'+email+'</td>')
+    // .append('<td>'+salary+'</td>')
+    // .append('<td><a href="deleteEmp?id="'+Date.now()+'>Delete</a></td>')
+    // .appendTo('#employeeTable>tbody')
+    // .find('a')
+    // .click(clickDelete)
+
+    //3.清除输入
+    // $empName.val('')
+    // $email.val('')
+    // $salary.val('')
+
+    // 给所有删除链接绑定点击监听
+    // $('#employeeTable a').click(clickDelete)
+
+    // 2.点击删除的回调函数
+//     $('#employeeTable a').click(function(){
+//         var $tr = $(this).parent().parent()
+//         var name = $tr.children(':first').html()
+//         if(confirm('确定删除'+name+'吗?')){
+//         $tr.remove()
+//     }
+//     return false
+// })
+
+    </script>
+</body>
+</html> 
