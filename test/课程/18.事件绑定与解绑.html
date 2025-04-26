@@ -48,7 +48,37 @@
         // console.log('离开3')
         // })
 
+        //3.点击btn1解除.inner上的所有事件监听
+        // $('#btn1').click(function(){
+        //     $('.inner').off()
+        // })
+       
+        // //4.点击btn2解除.inner上的mouseenter事件
+        // $('#btn2').click(function(){
+        // $('.inner').off('mouseenter')
+        // })
         
+        //5.点击btn3得到事件坐标
+        // $('#btn3').click(function (event){//event事件对象
+        // console.log(event.offsetx,event.offsetY)//原点为事件元素的左上角
+        // console.log(event.clientX,event.clientY)//原点为窗口的左上角
+        // console.log(event.pagex,event.pageY) //原点为页面的左上角
+        // })
+
+
+        // //6.点击.inner区域,外部点击监听不响应
+        // $('.inner').click(function(event){
+        // console.log('click inner')
+        // //停止事件冒泡
+        // event.stopPropagation()
+        // })
+
+        //7.点击链接,如果当前时间是偶数不跳转
+    $('#test4').click(function(event){
+        if(Date.now()%2==0){
+            event.preventDefault()
+        }
+    })
         
     </script>
 </body>
