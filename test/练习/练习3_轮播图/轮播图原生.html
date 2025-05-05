@@ -1,10 +1,60 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>轮播图原生</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简单轮播图</title>
+    <style>
+        .slider {
+            width: 300px;
+            height: 200px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slider img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .slider img.active {
+            opacity: 1;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <div class="slider">
+        <img src="https://picsum.photos/300/200?random=1" alt="Slide 1" class="active">
+        <img src="https://picsum.photos/300/200?random=2" alt="Slide 2">
+        <img src="https://picsum.photos/300/200?random=3" alt="Slide 3">
+    </div>
+    <script>
+        const slides = document.querySelectorAll('.slider img');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        setInterval(nextSlide, 3000);
+    </script>
 </body>
+
 </html>
+    
