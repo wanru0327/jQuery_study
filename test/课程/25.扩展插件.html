@@ -9,8 +9,59 @@
     
     <script type="text/javascript" src="jquery3.7.1.js"> </script>
     <script type="text/javascript">
+    /* 1.扩展jQuery的工具方法
+    $.extend(object)
+    2.扩展jQuery对象的方法
+    $.fn .extend(object)*/
+
+   /*  需求:
+    1.给3添加4个工具方法:
+    min(a,b):返回较小的值
+    max(c,d):返回较大的值
+    LeftTrim():去掉字符串左边的空格
+    *rightTrim():去掉字符串右边的空格
+    2.给jQuery对象添加3个功能方法:
+    checkAll():全选
+    unCheckAll():全不选
+    reverseCheck():全反选 */
     
-    
+        (function(){
+            //扩展￥的方法
+        $.extend({
+        min:function(a,b){
+        returna<b?a:b
+        },
+        max:function(a,b){
+        returna>b?a:b
+        },
+        leftTrim:function(str){
+            return str.replace(/^\s+/,'')
+        },
+        rightTrim: function(str){
+            return str.replace(/\s+$/,'')
+        }
+        })
+
+        //扩展jquery对象的方法
+        $.fn.extend({
+        checkAll:function(){
+            this.prop('checked',true)//this是jquery对象
+        },
+        unCheckAll:function(){
+            this.prop('checked',false)
+        },
+        reverseCheck: function(){
+            //this是jquery对象
+            this.each(function(){
+                //this是dom元素
+                this.checked = !this.checked
+            })
+        }
+        })
+    })()
+
+
+
 
     </script>
 </body>
